@@ -16,7 +16,45 @@
       </div>
     </div>
 
+    
+
     <div class="col-span-2 gap-10 space-y-16 mt-11 pt-6 ">
+
+
+      <div>
+        <form method="get" action="{% url 'Department' dep 'achievements' %}" class="flex justify-between py-6 items-center">
+          <div class="flex space-x-4 items-center"> 
+            <div class="space-x-2">
+              <input type="radio" name="year" value="ALL" checked  />
+              <label for="ALL">ALL</label>
+            </div>
+            <div class="space-x-2">
+              <input type="radio" name="year" value="2023-24" {% ifequal year '2023-24' %} checked {% endifequal %} />
+              <label for="2023-24">2023-24</label>
+            </div>
+            <div class="space-x-2">
+              <input type="radio" name="year" value="2022-23" {% ifequal year '2022-23' %}checked{% endifequal %} />
+              <label for="2022-23">2022-23</label>
+            </div>
+            <div class="space-x-2">
+              <input type="radio" name="year" value="2021-22" {% ifequal year '2021-22' %}checked{% endifequal %} />
+              <label for="2021-22">2021-22</label>
+            </div>
+            <div class="space-x-2">
+              <input type="radio" name="year" value="2020-21" {% ifequal year '2020-21' %}checked{% endifequal %} />
+              <label for="2020-21">2020-21</label>
+            </div>
+            
+            <div class="space-x-2">
+              <button type="submit" class="px-2 py-1 bg-blue-500 rounded-xl">Apply</button>
+            </div>
+    
+          </div>
+    
+          
+        </form>
+      </div>
+
         {% for achivement in achivements %}
         
         <div class="flex md:flex-row flex-col justify-center items-center md:items-start  space-y-11 md:space-y-0 w-full px-6 md:space-x-6 h-auto group">

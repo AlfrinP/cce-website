@@ -128,7 +128,16 @@ def Department(request, route, department):
             case "labs":
                 return render(request, 'Departments/Laboratories.html', context)
             case "achievements":
-                return render(request, 'Departments/Achievements.html', context)
+                if request.method == "GET":
+                    year = request.GET.get('get_year', 'ALL')
+                    if year == "ALL":
+                        achievements = DepAchievements.objects.all().order_by('?')
+                    else:
+                        achievements = DepAchievements.objects.filter(year=year)
+                    context['Achievements'] = achievements
+                    # context['year'] = year
+                return render(request, 'Departments/Achievements.html', context=context)
+                    
             case "events":
                 return render(request, 'Departments/Events.html', context)
             case "curriculum_and_syllabus":
@@ -136,7 +145,7 @@ def Department(request, route, department):
             case "newsletters":
                 return render(request, 'Departments/NewsLetters.html', context) 
             case "research":
-                return redirect('dep_research',department,'index') 
+                return redirect('dep_research',department,'index')
             case other:
                 raise Http404("Page Not Found")
 
@@ -147,7 +156,7 @@ def research_page(request,department,slug):
         case "index":
             hero_title = "Research"
             context = {"hero_title":hero_title,**context_temp} 
-            return render(request, 'Departments/research/index.html',context)
+            return render(request, 'Departments/research/index.html',context) 
         case 'consultancy':
             context = {
                 
