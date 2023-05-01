@@ -20,9 +20,67 @@
 
     <div class="col-span-2 gap-10 space-y-16 mt-11 pt-6 ">
 
+      <!-- component -->
 
       <div>
-        <form method="get" action="{% url 'Department' dep 'achievements' %}" class="flex justify-between py-6 items-center">
+
+      <div>
+        <ul class="flex items-center gap-2 text-sm font-medium">
+          <li class="flex-1">
+            <a
+              href="#"
+              class="relative flex items-center justify-center gap-2 rounded-lg bg-gray-200 px-3 py-2 text-gray-700 hover:text-gray-700"
+            >
+              Faculty Achievements</a>
+          </li>
+          <li class="flex-1">
+            <a
+              href="#"
+              class="flex items-center justify-center gap-2 rounded-lg px-3 py-2 text-gray-500 hover:bg-gray-50 hover:text-gray-700"
+            >
+              Students Achievements</a>
+          </li>
+          
+          
+      
+        </ul>
+      </div>
+
+  <div>
+    <ul class="flex items-center gap-2 text-sm font-medium">
+      <li class="flex-1">
+        <a
+          href="#"
+          class="relative flex items-center justify-center gap-2 rounded-lg bg-gray-200 px-3 py-2 text-gray-700 hover:text-gray-700"
+        >
+          2022-23</a>
+      </li>
+      <li class="flex-1">
+        <a
+          href="#"
+          class="flex items-center justify-center gap-2 rounded-lg px-3 py-2 text-gray-500 hover:bg-gray-50 hover:text-gray-700"
+        >
+          2021-22</a>
+      </li>
+      <li class="flex-1">
+        <a
+          href="#"
+          class="flex items-center justify-center gap-2 rounded-lg px-3 py-2 text-gray-500 hover:bg-gray-50 hover:text-gray-700"
+        >
+         2020-21
+        </a>
+      </li>
+      
+  
+    </ul>
+  </div>
+      </div>
+  
+
+
+      <!-- <div>
+        {% comment %} <form method="get" action="{% url 'Department' dep 'achievements' %}" class="flex justify-between py-6 items-center"> {% endcomment %}
+          <form method="get" action="{% url 'Department' dep 'achievements' %}" class="flex justify-between py-6 items-center">
           <div class="flex space-x-4 items-center"> 
             <div class="space-x-2">
               <input type="radio" name="year" value="ALL" checked  />
@@ -53,7 +111,7 @@
     
           
         </form>
-      </div>
+      </div>  -->
 
         {% for achivement in achivements %}
         

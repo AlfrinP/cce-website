@@ -128,13 +128,13 @@ def Department(request, route, department):
             case "labs":
                 return render(request, 'Departments/Laboratories.html', context)
             case "achievements":
-                if request.method == "GET":
-                    year = request.GET.get('get_year', 'ALL')
-                    if year == "ALL":
-                        achievements = DepAchievements.objects.all().order_by('?')
-                    else:
-                        achievements = DepAchievements.objects.filter(year=year)
-                    context['Achievements'] = achievements
+                # if request.method == "GET":
+                #     year = request.GET.get('get_year', 'ALL')
+                #     if year == "ALL":
+                #         achievements = DepAchievements.objects.all().order_by('?')
+                #     else:
+                #         achievements = DepAchievements.objects.filter(year=year)
+                #     context['Achievements'] = achievements
                     # context['year'] = year
                 return render(request, 'Departments/Achievements.html', context=context)
                     
